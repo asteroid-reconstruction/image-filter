@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\util">
+      <UniqueIdentifier>{a8461e9d-8df4-4b3a-b07f-c799486c02d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\util">
+      <UniqueIdentifier>{838633c2-822c-410d-92dd-1c14b23eb22f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImageFilter.h">
@@ -21,8 +27,14 @@
     <ClInclude Include="Indicator.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Visualizer.h">
+    <ClInclude Include="FilterOutput.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Visualizer.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\JSONParser.h">
+      <Filter>头文件\util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -32,8 +44,11 @@
     <ClCompile Include="Indicator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Visualizer.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="util\JSONParser.cpp">
+      <Filter>源文件\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Visualizer.cpp">
+      <Filter>源文件\util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

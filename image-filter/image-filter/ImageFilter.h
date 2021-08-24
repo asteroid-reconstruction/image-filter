@@ -1,38 +1,10 @@
 #pragma once
 #include "Indicator.h"
+#include "FilterOutput.h"
 #include <numeric>
 
 //asteroid reconstruction
 namespace ar {
-
-	/**
-	* @brief	过滤器输出类
-	*
-	* 用于保存过滤器的过滤结果，同时拥有源图像信息
-	*/
-	struct FilterOutput{
-
-		std::string		imagePath{};	/**< 图像文件路径，仅当使用路径指定图像时不为空*/
-		cv::Mat			image{};		/**< 图像矩阵，仅当使用OpenCV Mat指定图像时不为空*/
-		double			index{};		/**< 最终质量得分，由过滤条件计算得到*/
-		bool			passed{};		/**< 是否通过，由过滤条件计算指定*/
-
-		/**
-		* @brief	构造函数
-		*
-		* @param	_imgPath	图像路径
-		* @param	_img		图像
-		* @param	_index		最终质量得分
-		* @param	_passed		是否通过过滤
-		*/
-		FilterOutput(
-			const std::string& _imgPath = "",
-			const cv::Mat& _img = cv::Mat(),
-			double _index = 0,
-			bool _passed = false) :
-			imagePath(_imgPath), image(_img), index(_index), passed(_passed) {}
-
-	};
 
 	/**
 	* @brief	图像过滤器类
@@ -44,7 +16,7 @@ namespace ar {
 	class ImageFilter {
 
 	public:
-		explicit ImageFilter(){}
+		explicit ImageFilter(const std::string& _id):id(_id){}
 		virtual ~ImageFilter(){}
 
 	public:
@@ -60,16 +32,23 @@ namespace ar {
 		using FilterCondition = bool(*)(const std::vector<double>&, double&);
 
 	private:
+
 		typedef std::vector<std::shared_ptr<Indicator> > IndiVecType;
+		//质量评价指数计算器序列
 		IndiVecType mIndicatorVec{};
 
+		//过滤条件
 		FilterCondition mpCondition{nullptr};
 
+		//默认过滤条件
 		FilterCondition mpDefaultCondition = 
 			[](const std::vector<double>& indices, double& finalIndex) {
 				finalIndex = std::accumulate(indices.begin(), indices.end(), 0);
 				return true;
 			};
+
+		//过滤器ID
+		std::string id = "undefined-filter";
 
 	public:
 		/**
@@ -135,30 +114,6 @@ namespace ar {
 		* 若没有调用setFilterCondition设置过滤条件，将使用默认过滤条件：
 		* 累加所有指数计算器的评分值，所有的图像都将通过过滤
 		*
-		* @param[in]	image	图像矩阵
-		* @return	过滤结果[FilterOutput](@ref FilterOutput)
-		* 
-		*/
-		FilterOutput filter(const cv::Mat& image);
-
-		/**
-		* @brief	过滤图像
-		*
-		* 若没有调用setFilterCondition设置过滤条件，将使用默认过滤条件：
-		* 累加所有指数计算器的评分值，所有的图像都将通过过滤
-		*
-		* @param[in]	images	图像矩阵数组
-		* @return	过滤结果数组[FilterOutput](@ref FilterOutput)
-		*
-		*/
-		std::vector<FilterOutput> filter(const std::vector<cv::Mat> images);
-
-		/**
-		* @brief	过滤图像
-		*
-		* 若没有调用setFilterCondition设置过滤条件，将使用默认过滤条件：
-		* 累加所有指数计算器的评分值，所有的图像都将通过过滤
-		*
 		* @param[in]	imagePath	图像文件路径
 		* @return	过滤结果[FilterOutput](@ref FilterOutput)
 		*
@@ -176,5 +131,17 @@ namespace ar {
 		*
 		*/
 		std::vector<FilterOutput> filter(const std::vector<std::string>& imagePaths);
+
+		/**
+		* @brief	获取过滤器ID
+		* @return	过滤器ID
+		*/
+		std::string getID()const { return id; }
+
+		/**
+		* @brief	设置过滤器ID
+		* @param	_id		过滤器ID
+		*/
+		void setID(const std::string& _id) { id = _id; }
 	};
 };

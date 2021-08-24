@@ -20,8 +20,13 @@ namespace ar {
 	class Indicator{
 
 	public:
-		explicit Indicator(){}
+		explicit Indicator(const std::string& _id):id(_id) {}
 		virtual ~Indicator(){}
+
+	private:
+
+		//指数计算器ID
+		std::string id = "undefined-indicator";
 
 	public:
 
@@ -34,7 +39,6 @@ namespace ar {
 		* @return		评分
 		*/
 		virtual double calc(const cv::Mat& img) = 0;
-
 
 		/**
 		* @brief	质量评价指数计算函数
@@ -55,6 +59,18 @@ namespace ar {
 		* @brief	定义函数对象调用运算符
 		*/
 		double operator()(const std::string& imgPath) { return calc(imgPath); }
+
+		/**
+		* @brief	获取质量指数计算器ID
+		* @return	质量指数计算器ID
+		*/
+		std::string getID()const { return id; }
+
+		/**
+		* @brief	设置质量指数计算器ID
+		* @param	_id		质量指数计算器ID
+		*/
+		void setID(const std::string& _id) { id = _id; }
 	};
 
 };

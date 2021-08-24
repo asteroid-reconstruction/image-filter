@@ -120,6 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,6 +136,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,14 +147,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="FilterOutput.h" />
     <ClInclude Include="ImageFilter.h" />
     <ClInclude Include="Indicator.h" />
-    <ClInclude Include="Visualizer.h" />
+    <ClInclude Include="util\JSONParser.h" />
+    <ClInclude Include="util\Visualizer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ImageFilter.cpp" />
     <ClCompile Include="Indicator.cpp" />
-    <ClCompile Include="Visualizer.cpp" />
+    <ClCompile Include="util\JSONParser.cpp" />
+    <ClCompile Include="util\Visualizer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
