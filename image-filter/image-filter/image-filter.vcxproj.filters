@@ -19,6 +19,12 @@
     <Filter Include="源文件\util">
       <UniqueIdentifier>{838633c2-822c-410d-92dd-1c14b23eb22f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\indicator">
+      <UniqueIdentifier>{1616e844-2692-414d-a442-43e9f245c8de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\indicator">
+      <UniqueIdentifier>{d1a5d46e-8627-4381-b61d-48d805e06fe4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImageFilter.h">
@@ -36,6 +42,12 @@
     <ClInclude Include="util\JSONParser.h">
       <Filter>头文件\util</Filter>
     </ClInclude>
+    <ClInclude Include="indicator\SplitIndicator.h">
+      <Filter>头文件\indicator</Filter>
+    </ClInclude>
+    <ClInclude Include="util\ImageParser.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ImageFilter.cpp">
@@ -48,6 +60,15 @@
       <Filter>源文件\util</Filter>
     </ClCompile>
     <ClCompile Include="util\Visualizer.cpp">
+      <Filter>源文件\util</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="indicator\SplitIndicator.cpp">
+      <Filter>源文件\indicator</Filter>
+    </ClCompile>
+    <ClCompile Include="util\ImageParser.cpp">
       <Filter>源文件\util</Filter>
     </ClCompile>
   </ItemGroup>

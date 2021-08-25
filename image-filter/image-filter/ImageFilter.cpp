@@ -23,8 +23,9 @@ std::vector<FilterOutput> ImageFilter::filter(const std::vector<std::string>& im
         indicatorIDs.push_back(indicator->getID());
     }
 
-    for (std::vector<const cv::Mat>::size_type i = 0; i < imagePaths.size(); ++i) {
+    for (std::vector<std::string>::size_type i = 0; i < imagePaths.size(); ++i) {
 
+        indices.emplace_back();
         indices[i].reserve(mIndicatorVec.size());
 
         cv::Mat image = cv::imread(imagePaths[i], cv::IMREAD_GRAYSCALE);
@@ -38,6 +39,7 @@ std::vector<FilterOutput> ImageFilter::filter(const std::vector<std::string>& im
         if (mpCondition)    fo.passed = mpCondition(indices[i], fo.finalIndex);
         else                fo.passed = mpDefaultCondition(indices[i], fo.finalIndex);
 
+        fo.imagePath = imagePaths[i];
         fo.stageIndices = indices[i];
         fo.filterID = id;
         fo.indicatorIDs = indicatorIDs;

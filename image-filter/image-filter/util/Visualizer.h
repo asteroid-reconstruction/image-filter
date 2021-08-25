@@ -17,12 +17,12 @@ namespace ar {
 		*/
 		class Visualizer
 		{
-		public:
+		private:
 			explicit Visualizer(){}
 			virtual ~Visualizer(){}
 
-		private:
 
+		public:
 			/**
 			* @brief	将过滤结果可视化
 			* 

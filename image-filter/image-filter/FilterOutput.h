@@ -62,7 +62,7 @@ namespace ar {
                 if (i != stageIndices.size() - 1)
                     json << comma;
             }
-            json << rbra;
+            json << rbra << comma;
 
             json << properties[4] << colon << lbra;
             for (decltype(indicatorIDs)::size_type i = 0; i < indicatorIDs.size(); ++i) {
@@ -70,7 +70,7 @@ namespace ar {
                 if (i != stageIndices.size() - 1)
                     json << comma;
             }
-            json << rbra;
+            json << rbra << comma;
 
             json << properties[5] << colon << wrap(this->filterID);
 

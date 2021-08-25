@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+
+.popover-body{
+    height: 100px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+.btn{
+    padding: 0px 10px 0px 10px;
+}
+.btn:hover{
+    background-color: lightgray;
+}
+
+.filter-output{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.status-sign{
+    width: 15%;
+    position: absolute;
+    left: 20px;
+    top: -5px;
+}
+
+.image{
+    width: 100%;
+}
+
+.image-path{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.final-index{
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 5px;
+}
+/*div containing final-index*/
+#main-content > section > div:nth-child(4){
+    margin-top: 5px;
+    margin-bottom: 15px;
+}

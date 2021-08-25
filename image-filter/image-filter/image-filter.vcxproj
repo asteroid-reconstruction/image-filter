@@ -125,7 +125,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_world453d.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world453d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,19 +143,24 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_world453.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world453.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="FilterOutput.h" />
     <ClInclude Include="ImageFilter.h" />
     <ClInclude Include="Indicator.h" />
+    <ClInclude Include="indicator\SplitIndicator.h" />
+    <ClInclude Include="util\ImageParser.h" />
     <ClInclude Include="util\JSONParser.h" />
     <ClInclude Include="util\Visualizer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ImageFilter.cpp" />
     <ClCompile Include="Indicator.cpp" />
+    <ClCompile Include="indicator\SplitIndicator.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="util\ImageParser.cpp" />
     <ClCompile Include="util\JSONParser.cpp" />
     <ClCompile Include="util\Visualizer.cpp" />
   </ItemGroup>
