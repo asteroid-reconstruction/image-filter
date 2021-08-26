@@ -7,7 +7,7 @@ double ar::SplitIndicator::calc(const cv::Mat& img)
     cv::Mat binarizedImg;
 
     //二值化
-    cv::threshold(img, binarizedImg, threshold, 255, cv::THRESH_OTSU | cv::THRESH_BINARY);
+    cv::threshold(img, binarizedImg, threshold, 255, cv::THRESH_BINARY);
 
     //统计像素数
     int validPixCount = 0, totalPixCount = binarizedImg.rows * binarizedImg.cols;

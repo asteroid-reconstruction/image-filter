@@ -2,6 +2,19 @@
     box-sizing: border-box;
 }
 
+#navbar{
+    background-color: rgb(230, 230, 230);
+}
+
+.navbar-brand{
+    font-size: 2em;
+}
+
+#stats-table{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 .popover-body{
     height: 100px;
     overflow-y: auto;
@@ -13,6 +26,17 @@
 }
 .btn:hover{
     background-color: lightgray;
+}
+
+.nav-tool-icon{
+     display: block;
+     margin: auto;
+     width: 20px;
+}
+
+#nav-tool-statistics:hover{
+    background-color: moccasin;
+    cursor: pointer;
 }
 
 .filter-output{

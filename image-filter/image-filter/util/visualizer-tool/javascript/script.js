@@ -7,6 +7,19 @@ $(function () {
     //set header text as filter id
     document.querySelector("#navbar-header-text").innerHTML += filterOutput[0]["filter-id"];
 
+    //fill the statistics
+    var calculator = new Calculator();
+    var stats = calculator.getStatistics();
+
+    document.getElementById('stats-total').innerHTML = stats.total;
+    document.getElementById('stats-valid').innerHTML = stats.valid;
+    document.getElementById('stats-percentage').innerHTML = stats.percentage * 100 + "%";
+    document.getElementById('stats-average').innerHTML = stats.average;
+    document.getElementById('stats-max').innerHTML = stats.max;
+    document.getElementById('stats-min').innerHTML = stats.min;
+    document.getElementById('stats-median').innerHTML = stats.median;
+
+
     //insert filter output element
     var elemid = 0;
 

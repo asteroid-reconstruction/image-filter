@@ -31,13 +31,23 @@
             <div class="collapse navbar-collapse" id="nav-button-collapsed">
                 <ul id="nav-list" class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="text-center"><span>Filter</span></a>
+                        <a class="text-center nav-tool" id="nav-tool-search">
+                            <img class="nav-tool-icon" src="./resource/search.svg">
+                            <span class="nav-tool-text">Search</span>
+                        </a>
                     </li>
                     <li>
-                        <a class="text-center"><span>Statistics</span></a>
+                        <a class="text-center nav-tool collapsed" id="nav-tool-statistics" data-toggle="collapse"
+                            data-target="#stats-panel" aria-expanded="false">
+                            <img class="nav-tool-icon" src="./resource/bar-chart-line.svg">
+                            <span class="nav-tool-text">Statistics</span>
+                        </a>
                     </li>
                     <li>
-                        <a class="text-center"><span>About</span></a>
+                        <a class="text-center nav-tool" id="nav-tool-about">
+                            <img class="nav-tool-icon" src="./resource/info-circle.svg">
+                            <span class="nav-tool-text">About</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -47,6 +57,60 @@
         <!--navbar container-->
     </nav>
 
+    <!--Staticstics Panel-->
+    <div class="container collapse" id="stats-panel">
+        <!--Basic statistics-->
+        <section>
+            <div class="row">
+                <div class="col-md-4" class="stats-basic">
+                    <!--total amount of image-->
+                    <span class="badge badge-info">Total</span>
+                    <span id="stats-total"></span>
+                </div>
+                <div class="col-md-4" class="stats-basic">
+                    <!--passed amount of image-->
+                    <span class="badge badge-info">Valid</span>
+                    <span id="stats-valid"></span>
+                </div>
+                <div class="col-md-4" class="stats-basic">
+                    <!--percentage of passed-->
+                    <span class="badge badge-info">Percentage</span>
+                    <span id="stats-percentage"></span>
+                </div>
+            </div>
+        </section>
+        <!--Statistics table-->
+        <section>
+            <table class="table" id="stats-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Statistic</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Average Index</th>
+                        <td id="stats-average"></td>
+                    </tr>
+                    <tr>
+                        <td>Max Index</th>
+                        <td id="stats-max"></td>
+                    </tr>
+                    <tr>
+                        <td>Min Index</th>
+                        <td id="stats-min"></td>
+                    </tr>
+                    <tr>
+                        <td>Median</th>
+                        <td id="stats-median"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!--Main content-->
     <div class="container">
         <div class="row" id='main-content'>
         </div>
@@ -96,9 +160,11 @@
     <script src="javascript/bootstrap.js"></script>
 
     <!--a way to bypass the CORS-->
+    <script src="javascript/statistics.js"></script>
     <script src="javascript/result.js"></script>
     <script src='javascript/generator.js'></script>
     <script src="javascript/script.js"></script>
+    <script src='javascript/event.js'></script>
 
 </body>
 
