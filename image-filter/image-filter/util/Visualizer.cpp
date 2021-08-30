@@ -12,10 +12,9 @@ void ar::util::Visualizer::show(std::vector<FilterOutput> foVec)
 	cwd = _getcwd(cwd, 256);
 	std::string outPath(cwd);
 	assert(cwd);
-	delete[] cwd;
 
 	//CORS限制，直接生产一个JS Object
-	outPath += "\\util\\visualizer-tool\\filteroutput\\result.js";
+	outPath += "\\util\\visualizer-tool\\javascript\\result.js";
 
 	std::ofstream ofs(outPath, std::ios::out);
 
@@ -26,5 +25,11 @@ void ar::util::Visualizer::show(std::vector<FilterOutput> foVec)
 	else
 		assert(0);
 
-	std::cout << system("\"E:/OneDrive - whu.edu.cn/Codes/image-filter/image-filter/image-filter/util/visualizer-tool/index.html\"");
+	std::string vistoolPath = cwd;
+	vistoolPath += "\\util\\visualizer-tool\\index.html";
+
+	std::cout << vistoolPath;
+	std::cout << system(('\"' + vistoolPath + '\"').c_str());
+
+	delete[] cwd;
 }

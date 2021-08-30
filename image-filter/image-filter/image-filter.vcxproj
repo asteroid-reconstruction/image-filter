@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AverageIndicator.h" />
     <ClInclude Include="FilterOutput.h" />
     <ClInclude Include="ImageFilter.h" />
     <ClInclude Include="Indicator.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="util\Visualizer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AverageIndicator.cpp" />
     <ClCompile Include="ImageFilter.cpp" />
     <ClCompile Include="Indicator.cpp" />
     <ClCompile Include="indicator\SplitIndicator.cpp" />

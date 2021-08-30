@@ -48,6 +48,9 @@
     <ClInclude Include="util\ImageParser.h">
       <Filter>头文件\util</Filter>
     </ClInclude>
+    <ClInclude Include="AverageIndicator.h">
+      <Filter>头文件\indicator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ImageFilter.cpp">
@@ -70,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="util\ImageParser.cpp">
       <Filter>源文件\util</Filter>
+    </ClCompile>
+    <ClCompile Include="AverageIndicator.cpp">
+      <Filter>源文件\indicator</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

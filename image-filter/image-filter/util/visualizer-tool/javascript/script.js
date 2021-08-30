@@ -18,7 +18,7 @@ $(function () {
     document.getElementById('stats-max').innerHTML = stats.max;
     document.getElementById('stats-min').innerHTML = stats.min;
     document.getElementById('stats-median').innerHTML = stats.median;
-
+    document.getElementById('1/4-Fraction').innerHTML = stats["1/4-Fraction"];
 
     //insert filter output element
     var elemid = 0;
