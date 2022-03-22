@@ -30,9 +30,6 @@
     <ClInclude Include="ImageFilter.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Indicator.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="FilterOutput.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -49,6 +46,15 @@
       <Filter>头文件\util</Filter>
     </ClInclude>
     <ClInclude Include="AverageIndicator.h">
+      <Filter>头文件\indicator</Filter>
+    </ClInclude>
+    <ClInclude Include="StdIndicator.h">
+      <Filter>头文件\indicator</Filter>
+    </ClInclude>
+    <ClInclude Include="Indicator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GradientIndicator.h">
       <Filter>头文件\indicator</Filter>
     </ClInclude>
   </ItemGroup>
@@ -75,6 +81,12 @@
       <Filter>源文件\util</Filter>
     </ClCompile>
     <ClCompile Include="AverageIndicator.cpp">
+      <Filter>源文件\indicator</Filter>
+    </ClCompile>
+    <ClCompile Include="StdIndicator.cpp">
+      <Filter>源文件\indicator</Filter>
+    </ClCompile>
+    <ClCompile Include="GradientIndicator.cpp">
       <Filter>源文件\indicator</Filter>
     </ClCompile>
   </ItemGroup>

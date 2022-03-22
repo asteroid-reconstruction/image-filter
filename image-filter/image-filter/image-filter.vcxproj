@@ -149,19 +149,23 @@
   <ItemGroup>
     <ClInclude Include="AverageIndicator.h" />
     <ClInclude Include="FilterOutput.h" />
+    <ClInclude Include="GradientIndicator.h" />
     <ClInclude Include="ImageFilter.h" />
     <ClInclude Include="Indicator.h" />
     <ClInclude Include="indicator\SplitIndicator.h" />
+    <ClInclude Include="StdIndicator.h" />
     <ClInclude Include="util\ImageParser.h" />
     <ClInclude Include="util\JSONParser.h" />
     <ClInclude Include="util\Visualizer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AverageIndicator.cpp" />
+    <ClCompile Include="GradientIndicator.cpp" />
     <ClCompile Include="ImageFilter.cpp" />
     <ClCompile Include="Indicator.cpp" />
     <ClCompile Include="indicator\SplitIndicator.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="StdIndicator.cpp" />
     <ClCompile Include="util\ImageParser.cpp" />
     <ClCompile Include="util\JSONParser.cpp" />
     <ClCompile Include="util\Visualizer.cpp" />
